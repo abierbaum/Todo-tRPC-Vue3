@@ -1,7 +1,7 @@
 import { useQueryClient, useQuery, useMutation } from 'vue-query'
 import { createTRPCProxyClient } from '@trpc/client'
 import { httpBatchLink } from '@trpc/client/links/httpBatchLink'
-import type { AppRouter } from 'api-server/server'
+import type { AppRouter } from '../../api-server/server';
 import type { Ref } from 'vue'
 const url = import.meta.env.VITE_TRPC_URL
 

@@ -1,16 +1,14 @@
 {
-  //"extends": "@vue/tsconfig/tsconfig.web.json",
   "compilerOptions": {
-    "lib": [
-      "es5",
-      "es6",
-      "es7",
-      "esnext",
-      "dom"
-    ],
-    "target": "esnext",
-    "module": "esnext",
-    "declaration": true,
+
+   // see: https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping
+   "lib": ["es2022"],
+   "module": "commonjs", // typescript outputs files with commonjs import/export syntax
+   "target": "es2022",
+   "moduleResolution": "node",
+
+
+    //"declaration": true,
     // "moduleResolution": "node",
     "outDir": "./dist",
     "allowUnreachableCode": false,
@@ -19,7 +17,6 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "sourceMap": true,
-    "moduleResolution": "node",
     "resolveJsonModule": true,
     /* Strict Type-Checking Options */
     "strict": true /* Enable all strict type-checking options. */,
@@ -34,24 +31,26 @@
     "noImplicitReturns": true /* Report error when not all code paths in function return a value. */,
     "noFallthroughCasesInSwitch": true /* Report errors for fallthrough cases in switch statement. */,
     "baseUrl": ".",
+    /*
     "paths": {
       "@/*": [
-        "./src/*"
+        "./*"
       ]
     }
+      */
   },
   "include": [
-    "env.d.ts",
-    "src/**/*",
-    "src/**/*.vue"
+    "./**/*.ts",
   ],
   "exclude": [
     "node_modules"
     // "**/__tests__/"
   ],
+  /*
   "references": [
     {
       "path": "./tsconfig.config.json"
     }
   ]
+    */
 }
